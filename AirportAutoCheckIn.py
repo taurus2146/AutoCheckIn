@@ -16,7 +16,7 @@ def check_in_all(title=os.environ['AIRPORT_TITLES'], email=os.environ['AIRPORT_E
     size = len(titles)
     for i in range(size):
         try:
-            checkInOne(titles[i], emails[i], passwords[i], urls[i])
+            check_in_one(titles[i], emails[i], passwords[i], urls[i])
         except Exception as e:
             requests.post('http://www.pushplus.plus/send/' + push_plus_token + '?title=' + title + '&content=签到失败')
 
